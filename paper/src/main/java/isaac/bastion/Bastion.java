@@ -16,6 +16,7 @@ import isaac.bastion.storage.BastionGroupStorage;
 import isaac.bastion.storage.Database;
 import isaac.bastion.utils.BastionSettingManager;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.logging.Level;
 import org.bukkit.configuration.ConfigurationSection;
 import vg.civcraft.mc.civmodcore.ACivMod;
@@ -156,7 +157,7 @@ public final class Bastion extends ACivMod {
 		adminAndAbove.add(PlayerType.OWNER);
 
 		PermissionType.registerPermission(Permissions.BASTION_PEARL, memberAndAbove, "Allows a player to throw a pearl into a bastion field.");
-		PermissionType.registerPermission(Permissions.BASTION_PLACE, modAndAbove, "Allows a player to place blocks within a bastion field.", false);
+		PermissionType.registerPermission(Permissions.BASTION_PLACE, modAndAbove, "Allows a player to place blocks within a bastion field.", Map.ofEntries(Map.entry("BASTION_PLACE", PlayerType.NOT_BLACKLISTED)));
 		PermissionType.registerPermission(Permissions.BASTION_LIST, modAndAbove, "Allows a player to see all bastions under this group.");
 		PermissionType.registerPermission(Permissions.BASTION_MANAGE_GROUPS, adminAndAbove, "Allows linking bastion groups.");
 		PermissionType.registerPermission(Permissions.BASTION_ELYTRA, modAndAbove, "Permits elytra flight through a bastion.");
