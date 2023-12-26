@@ -370,6 +370,8 @@ public class BastionBlock implements QTBox, Comparable<BastionBlock> {
 			result.append(strength);
 		}
 
+		result.append(", group: %s".formatted(getGroupName()));
+
 		return result.toString();
 	}
 
